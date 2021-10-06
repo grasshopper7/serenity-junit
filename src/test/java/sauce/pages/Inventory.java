@@ -22,4 +22,10 @@ public class Inventory extends PageObject {
 		$(By.xpath("//div[@class='inventory_item_description']//div[@class='inventory_item_name' and text()='" + name
 				+ "']")).click();
 	}
+
+	public void addProductToCart(String name) {
+		$(By.xpath("//div[@class='inventory_item_name' and text()='" + name
+				+ "']//ancestor::div[@class='inventory_item_label']//following-sibling::div[@class='pricebar']/button[@id='add-to-cart-sauce-labs-backpack']"))
+						.click();
+	}
 }

@@ -78,15 +78,14 @@
 						<include>**/*Test.java</include>
 						<include>**/Test*.java</include>
 						<include>**/*TestSuite.java</include>
-						<!-- <include>**/When*.java</include> -->
-						<include>**/Open*.java</include>
 						<include>sauce/**/*.java</include>
 					</includes>
 					<systemPropertyVariables>
 						<webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
 					</systemPropertyVariables>
-					<!-- <parallel>classes</parallel> <threadCount>${parallel.tests}</threadCount> 
-						<forkCount>${parallel.tests}</forkCount> -->
+					<!-- <parallel>classes</parallel>
+					<threadCount>${parallel.tests}</threadCount>
+					<forkCount>${parallel.tests}</forkCount> -->
 				</configuration>
 				<executions>
 					<execution>
