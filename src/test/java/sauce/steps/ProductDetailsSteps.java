@@ -17,7 +17,7 @@ public class ProductDetailsSteps {
 		assertThat(sauceProductDetails.getProductPrice()).isEqualTo(price);
 	}
 
-	@Step("#actor adds product named '{0} to cart")
+	@Step("#actor adds product named '{0}' to cart")
 	public void attemptToAddProductToCart(String productName) {
 		sauceProductDetails.addProductToCart(productName);
 	}
