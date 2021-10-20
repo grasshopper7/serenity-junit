@@ -19,29 +19,28 @@ public class SauceViewProduct {
 	@Managed
 	private WebDriver driver;
 
-	@Steps(actor = "Cleopatra")
-	private LoginSteps login;
+	@Steps(actor = "Jane Doe")
+	private LoginSteps loginSteps;
 
-	@Steps(actor = "Cleopatra")
-	private InventorySteps inventory;
+	@Steps(actor = "Jane Doe")
+	private InventorySteps inventorySteps;
 
-	@Steps(actor = "Cleopatra")
-	private ProductDetailsSteps product;
+	@Steps(actor = "Jane Doe")
+	private ProductDetailsSteps productDetailsSteps;
 
 	@Before
 	public void openSauceSite() {
-		login.navigateToWebApp();
-		login.attemptToLoginSuccessfully("standard_user", "secret_sauce");
-		inventory.verifyProductsDisplayed();
+		loginSteps.navigateToWebApp();
+		loginSteps.attemptToLoginSuccessfully("standard_user", "secret_sauce");
 	}
 
 	@Test
-	@Title("Select Product Details")
+	@Title("View Product Details")
 	public void shouldViewProductSuccesfully() {
 		String productName = "Test.allTheThings() T-Shirt (Red)";
 		String productPrice = "$15.99";
 
-		inventory.attemptToDisplayProductDetails(productName);
-		product.verifyProductDetails(productName, productPrice);
+		inventorySteps.attemptToDisplayProductDetails(productName);
+		productDetailsSteps.verifyProductDetails(productName, productPrice);
 	}
 }

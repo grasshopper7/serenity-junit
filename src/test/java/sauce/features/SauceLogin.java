@@ -18,28 +18,28 @@ public class SauceLogin {
 	@Managed
 	private WebDriver driver;
 
-	@Steps(actor = "Mounish")
-	private LoginSteps login;
+	@Steps(actor = "Jane Doe")
+	private LoginSteps loginSteps;
 
-	@Steps(actor = "Mounish")
-	private InventorySteps inventory;
+	@Steps(actor = "Jane Doe")
+	private InventorySteps inventorySteps;
 
 	@Before
 	public void openSauceSite() {
-		login.navigateToWebApp();
+		loginSteps.navigateToWebApp();
 	}
 
 	@Test
 	@Title("Successful Login Test")
 	public void shouldLoginSuccesfully() {
-		login.attemptToLoginSuccessfully("standard_user", "secret_sauce");
-		inventory.verifyProductsDisplayed();
+		loginSteps.attemptToLoginSuccessfully("standard_user", "secret_sauce");
+		inventorySteps.verifyProductsDisplayed();
 	}
 
 	@Test
 	@Title("Failed Login Test")
 	public void unableToLoginWithIncorrectDetails() {
-		login.failToLoginSuccessfully("wrong_user", "open_sauce");
-		login.verifyLoginFailureMessage();
+		loginSteps.failToLoginSuccessfully("wrong_user", "open_sauce");
+		loginSteps.verifyLoginFailureMessage();
 	}
 }

@@ -4,7 +4,7 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.ListOfWebElementFacades;
 import net.serenitybdd.core.pages.PageObject;
 
-public class CartIcon extends PageObject {
+public class CartIconPageObject extends PageObject {
 
 	public int productCountInCart() {
 		ListOfWebElementFacades count = $$(

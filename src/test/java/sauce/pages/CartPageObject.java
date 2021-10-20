@@ -4,7 +4,7 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.ListOfWebElementFacades;
 import net.serenitybdd.core.pages.PageObject;
 
-public class Cart extends PageObject {
+public class CartPageObject extends PageObject {
 
 	public boolean isProductAvailable(String name) {
 		ListOfWebElementFacades products = $$(

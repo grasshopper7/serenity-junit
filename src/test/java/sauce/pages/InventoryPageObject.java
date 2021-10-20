@@ -4,15 +4,7 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.At;
 
-@At("https://www.saucedemo.com/inventory.html")
-public class Inventory extends PageObject {
-
-	// Only called when page is explicitly called
-	/*
-	 * @WhenPageOpens public void checkLoginButtonIsVisible() {
-	 * $(By.xpath("//div[@id='header_container']//span[@class='title']")).
-	 * waitUntilVisible(); }
-	 */
+public class InventoryPageObject extends PageObject {
 
 	public String getProductPageHeadingText() {
 		return $(By.xpath("//div[@id='header_container']//span[@class='title']")).getTextValue();

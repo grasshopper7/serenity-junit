@@ -3,13 +3,13 @@ package sauce.steps;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import net.thucydides.core.annotations.Step;
-import sauce.pages.ProductDetails;
+import sauce.pages.ProductDetailsPageObject;
 
 public class ProductDetailsSteps {
 
 	private String actor;
 
-	private ProductDetails sauceProductDetails;
+	private ProductDetailsPageObject sauceProductDetails;
 
 	@Step("#actor should see name - '{0}' name and price - '{1}' displayed")
 	public void verifyProductDetails(String name, String price) {

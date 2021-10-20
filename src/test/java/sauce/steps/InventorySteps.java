@@ -1,15 +1,15 @@
 package sauce.steps;
 
-import net.thucydides.core.annotations.Step;
-import sauce.pages.Inventory;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import net.thucydides.core.annotations.Step;
+import sauce.pages.InventoryPageObject;
 
 public class InventorySteps {
 
 	private String actor;
 
-	private Inventory sauceInventory;
+	private InventoryPageObject sauceInventory;
 
 	@Step("#actor should see products displayed")
 	public void verifyProductsDisplayed() {

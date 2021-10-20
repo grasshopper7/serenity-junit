@@ -3,16 +3,16 @@ package sauce.steps;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import net.thucydides.core.annotations.Step;
-import sauce.pages.Cart;
-import sauce.pages.CartIcon;
+import sauce.pages.CartPageObject;
+import sauce.pages.CartIconPageObject;
 
 public class CartSteps {
 
 	private String actor;
 
-	private CartIcon cartIcon;
+	private CartIconPageObject cartIcon;
 
-	private Cart cart;
+	private CartPageObject cart;
 
 	@Step("#actor should see '{0}' products count in cart icon")
 	public void verifyProductCountInCartIcon(int count) {

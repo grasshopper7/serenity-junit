@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.WhenPageOpens;
 
 @DefaultUrl("https://www.saucedemo.com/")
-public class Login extends PageObject {
+public class LoginPageObject extends PageObject {
 
 	public void navigateToLogin() {
 		open();

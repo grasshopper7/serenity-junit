@@ -3,13 +3,13 @@ package sauce.steps;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import net.thucydides.core.annotations.Step;
-import sauce.pages.Login;
+import sauce.pages.LoginPageObject;
 
 public class LoginSteps {
 
 	private String actor;
 
-	private Login sauceLogin;
+	private LoginPageObject sauceLogin;
 
 	@Step("#actor navigates to sauce demo site")
 	public void navigateToWebApp() {

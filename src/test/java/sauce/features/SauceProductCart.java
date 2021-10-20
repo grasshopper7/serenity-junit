@@ -20,30 +20,29 @@ public class SauceProductCart {
 	@Managed
 	private WebDriver driver;
 
-	@Steps(actor = "Mounish")
-	private LoginSteps login;
+	@Steps(actor = "Jane Doe")
+	private LoginSteps loginSteps;
 
-	@Steps(actor = "Mounish")
-	private InventorySteps inventory;
+	@Steps(actor = "Jane Doe")
+	private InventorySteps inventorySteps;
 	
-	@Steps(actor = "Mounish")
-	private ProductDetailsSteps product;
+	@Steps(actor = "Jane Doe")
+	private ProductDetailsSteps productDetailsSteps;
 
-	@Steps(actor = "Mounish")
+	@Steps(actor = "Jane Doe")
 	private CartSteps cart;
 
 	@Before
 	public void openSauceSite() {
-		login.navigateToWebApp();
-		login.attemptToLoginSuccessfully("standard_user", "secret_sauce");
-		inventory.verifyProductsDisplayed();
+		loginSteps.navigateToWebApp();
+		loginSteps.attemptToLoginSuccessfully("standard_user", "secret_sauce");
 	}
 
 	@Test
 	@Title("Add to Cart from All Products Page")
 	public void shouldAddToCartFromAllProductsSuccesfully() {
 		String productName = "Sauce Labs Backpack";
-		inventory.attemptToAddProductToCart(productName);
+		inventorySteps.attemptToAddProductToCart(productName);
 		cart.verifyProductCountInCartIcon(1);
 		cart.attemptToDisplayCartDetails();
 		cart.verifyProductAvailableInCart(productName);
@@ -53,8 +52,8 @@ public class SauceProductCart {
 	@Title("Add to Cart from Product Details Page")
 	public void shouldAddToCartFromProductDetailSuccesfully() {
 		String productName = "Sauce Labs Bike Light";
-		inventory.attemptToDisplayProductDetails(productName);
-		product.attemptToAddProductToCart(productName);
+		inventorySteps.attemptToDisplayProductDetails(productName);
+		productDetailsSteps.attemptToAddProductToCart(productName);
 		cart.verifyProductCountInCartIcon(1);
 		cart.attemptToDisplayCartDetails();
 		cart.verifyProductAvailableInCart(productName);
