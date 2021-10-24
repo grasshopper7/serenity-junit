@@ -30,7 +30,7 @@ public class SauceProductCart {
 	private ProductDetailsSteps productDetailsSteps;
 
 	@Steps(actor = "Jane Doe")
-	private CartSteps cart;
+	private CartSteps cartSteps;
 
 	@Before
 	public void openSauceSite() {
@@ -43,9 +43,9 @@ public class SauceProductCart {
 	public void shouldAddToCartFromAllProductsSuccesfully() {
 		String productName = "Sauce Labs Backpack";
 		inventorySteps.attemptToAddProductToCart(productName);
-		cart.verifyProductCountInCartIcon(1);
-		cart.attemptToDisplayCartDetails();
-		cart.verifyProductAvailableInCart(productName);
+		cartSteps.verifyProductCountInCartIcon(1);
+		cartSteps.attemptToDisplayCartDetails();
+		cartSteps.verifyProductAvailableInCart(productName);
 	}
 
 	@Test
@@ -54,9 +54,9 @@ public class SauceProductCart {
 		String productName = "Sauce Labs Bike Light";
 		inventorySteps.attemptToDisplayProductDetails(productName);
 		productDetailsSteps.attemptToAddProductToCart(productName);
-		cart.verifyProductCountInCartIcon(1);
-		cart.attemptToDisplayCartDetails();
-		cart.verifyProductAvailableInCart(productName);
+		cartSteps.verifyProductCountInCartIcon(1);
+		cartSteps.attemptToDisplayCartDetails();
+		cartSteps.verifyProductAvailableInCart(productName);
 	}
 
 }
